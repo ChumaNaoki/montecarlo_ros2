@@ -17,7 +17,7 @@
 ### 構成
 
 1.`monte_carlo_publisher.py`:
-    - モンテカルロ法を使用してπを計算し、その結果をトピック`random_pi_estimator`に配信するパブリッシャーノード。
+- モンテカルロ法を使用してπを計算し、その結果をトピック`random_pi_estimator`に配信するパブリッシャーノード。
 
 2.`result.py`:
     - トピック`random_pi_estimator`を購読し、試行回数と近似したπの値をログ出力するサブスクライバーノード。
