@@ -17,7 +17,7 @@
 ### 構成
 
 1.`monte_carlo_publisher.py`:
-- モンテカルロ法を使用して円周率(π)を計算し、その結果をトピック`random_pi_estimator`に配信するパブリッシャーノード。
+- `0.3秒`ごとに、1回ずつランダムな点を生成し、モンテカルロ法を使用して円周率(π)を計算してその結果をトピック`random_pi_estimator`に`渡すパブリッシャーノード。
 
 2.`result.py`:
 - トピック`random_pi_estimator`を購読し、試行回数と近似したπの値をログ出力する。
@@ -63,15 +63,15 @@ source ~/ros2_ws/install/setup.bash
 source ~/ros2_ws/install/local_setup.bash
 ```
 
-4.ノードを個別に実行：
-```
-ros2 run mypkg monte_carlo_publisher
-ros2 run mypkg result
-```
-または、以下のコマンドでローンチファイルを使用して両方のノードを実行：
+4.以下のコマンドでローンチファイルを使用して両方のノードを実行：
 ```
 ros2 launch mypkg monte_carlo_publisher-result.launch.py
 ```
+
+# 注意事項
+- このパッケージにおけるノード`monte_carlo_publisher.py`のテストでは、結果がランダムで出力されるため出力結果のテストが行われていません。launchファイルを使用し実行した結果エラーが出力されないことまでしか確認出来ていませんがご了承ください。(手持ちの環境では正しく動作しました。)
+- このパッケージにおけるノード`monte_carlo_publisher.py`はあくまで、モンテカルロ法を使用して円周率(π)を計算し、その結果をトピック`random_pi_estimator`に渡しているだけです。launchファイルを使用し実行した結果の`試行回数:16 円周率: 3.5`における試行回数の数値は、ノード`result.py`にて計算している為、ノードを個別に実行した場合は試行回数の数値が`result.py`が起動された回数になります。
+
 ***
 ## テスト環境
 - OS: Ubuntu 20.04 LTS
