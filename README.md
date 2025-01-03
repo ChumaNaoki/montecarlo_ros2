@@ -79,5 +79,6 @@ ros2 launch mypkg monte_carlo_publisher-result.launch.py
 - Python バージョン: Python 3.8.10
 
 # ライセンス
+- このソフトウェアパッケージは３条BSDライセンスの下、再頒布および使用が許可されます。
 - このパッケージのtest.ymlにて, [こちらのコンテナ](https://hub.docker.com/r/ryuichiueda/ubuntu22.04-ros2/tags)（by Ryuichi Ueda）が使用されています.
 - © 2025 Chuma Naoki
