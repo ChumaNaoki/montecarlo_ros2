@@ -60,7 +60,6 @@ git clone https://github.com/ChumaNaoki/montecarlo-ros2.git
 
 2.ワークスペースをビルド：
 ```
-cd ~/ros2_ws
 colcon build
 ```
 
