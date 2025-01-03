@@ -70,7 +70,7 @@ ros2 run mypkg result
 ```
 または、以下のコマンドでローンチファイルを使用して両方のノードを実行：
 ```
-ros2 launch mypkg monte_carlo_pi.launch.py
+ros2 launch mypkg monte_carlo_publisher-result.launch.py
 ```
 ***
 ## テスト環境
