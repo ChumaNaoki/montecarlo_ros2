@@ -68,13 +68,7 @@ source ~/ros2_ws/install/local_setup.bash
 ros2 run mypkg monte_carlo_publisher
 ros2 run mypkg result
 ```
-- または、以下のコマンドでローンチファイルを使用して両方のノードを実行：
+または、以下のコマンドでローンチファイルを使用して両方のノードを実行：
 ```
 ros2 launch mypkg monte_carlo_pi.launch.py
 ```
-
-
-
-
-
-
