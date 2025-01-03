@@ -74,9 +74,9 @@ ros2 launch mypkg monte_carlo_pi.launch.py
 ```
 ***
 ## テスト環境
-- ROS 2 Jazzy（Ubuntu 24.04 LTSで, 自身のノートPCでテスト）
-- ROS 2 Humble（Ubuntu 22.04 LTSで, GitHub Actionsでテスト）
+- ROS 2 Jazzy（Ubuntu 24.04 LTS）
+- ROS 2 Humble（Ubuntu 22.04 LTS）
 
 # ライセンス
-- このパッケージのtest.ymlでは, こちらのコンテナ（by Ryuichi Ueda）を利用しています.
+- このパッケージのtest.ymlにて, [こちらのコンテナ](https://hub.docker.com/r/ryuichiueda/ubuntu22.04-ros2/tags)（by Ryuichi Ueda）が使用されています.
 - © 2025 Chuma Naoki
