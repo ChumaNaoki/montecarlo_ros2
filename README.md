@@ -98,7 +98,7 @@ ros2 launch mypkg monte_carlo_publisher-result.launch.py
 
 ***
 # 注意事項
-- ノード`monte_carlo_publisher.py`の結果はランダムに生成されるため、再現性のあるテストは出来ませんでした。Githubテスト上での結果は確認出来ていませんがご了承ください。(手持ちの環境では正しく動作しました。)
+- ノード`monte_carlo_publisher.py`の結果はランダムに生成されるため、1回目の出力`試行回数:1 円周率: 4.0`か
 - launchファイルを使用し実行した結果出力される試行回数は、`result.py`ノードが起動された回数に依存します。`monte_carlo_publisher.py`が発行する円周率の近似値とは独立して動作します。
 
 ***
