@@ -138,4 +138,67 @@ seq 5 | ./plus
 - このパッケージのコードは，下記のスライド（CC-BY-SA 4.0 by Ryuichi Ueda）のものを，本人の許可を得て自身の著作としたものです．
     - [https://github.com/ryuichiueda/slides_marp/tree/master/robosys2024](https://github.com/ryuichiueda/slides_marp/tree/master/robosys2024)
 - ©　2024 Chuma Naoki
+***
+ROS 2 モンテカルロ法を用いた円周率の近似
+このリポジトリには、モンテカルロ法を用いて円周率（π）を近似するための2つのROS 2ノードが含まれています。
+
+概要
+モンテカルロ法は、確率論を利用した数値計算手法です。このプロジェクトでは、単位正方形内にランダムな点を生成し、その中で単位円に含まれる点の割合を用いて円周率を近似します。
+
+構成
+monte_carlo_publisher.py:
+モンテカルロ法を使用してπを計算し、その結果をトピックrandom_pi_estimatorに配信するパブリッシャーノード。
+result.py:
+トピックrandom_pi_estimatorを購読し、試行回数と近似したπの値をログ出力するサブスクライバーノード。
+動作の仕組み
+monte_carlo_publisher.py:
+
+範囲[-1, 1]内でランダムな(x, y)座標を生成。
+点が単位円内（x^2 + y^2 <= 1）に含まれるかを判定。
+単位円内の点の割合を基に、円周率を近似。
+近似した円周率をトピックrandom_pi_estimatorに配信。
+result.py:
+
+トピックrandom_pi_estimatorを購読。
+試行回数と近似した円周率をログに記録。
+使い方
+前提条件
+ROS 2（例：Foxy以降）がインストールされていること。
+ROS 2のワークスペースが適切にセットアップされていること。
+ビルドと実行
+リポジトリをクローン：
+
+bash
+コードをコピーする
+git clone https://github.com/yourusername/ros2_monte_carlo.git
+ワークスペースをビルド：
+
+bash
+コードをコピーする
+colcon build
+ワークスペースをソース：
+
+bash
+コードをコピーする
+source install/setup.bash
+ノードを個別に実行：
+
+bash
+コードをコピーする
+ros2 run mypkg monte_carlo_publisher
+ros2 run mypkg result
+または、以下のコマンドでローンチファイルを使用して両方のノードを実行：
+
+bash
+コードをコピーする
+ros2 launch mypkg monte_carlo_pi.launch.py
+ファイル一覧
+monte_carlo_publisher.py:
+モンテカルロ法を用いてπを計算し、結果を配信するパブリッシャーノード。
+result.py:
+トピックrandom_pi_estimatorを購読し、試行回数とπの近似値を出力するサブスクライバーノード。
+将来の改善点
+試行回数を増加させ、精度を向上。
+結果を視覚化するツールを追加。
+並列計算をサポートする機能を追加。
 
