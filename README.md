@@ -1,5 +1,5 @@
 # montecarlo-ros2
-ロボットシステム学の`課題２`用のROS2パッケージを保存するリポジトリです。
+ロボットシステム学の`課題2`用のROS2パッケージを保存するリポジトリです。
 ***
 
 ## パッケージの概要
@@ -30,7 +30,7 @@
 
 - `montecarlo-ros2/mypkg/monte_carlo_publisher.py`: `0.3秒`ごとにモンテカルロ法を使用して円周率（π）を近似し、結果を`random_pi_estimator`トピックにパブリッシュします。
 - `montecarlo-ros2/mypkg/result.py`: `random_pi_estimator`トピックを購読し、円周率の近似値と試行回数を表示します。
-- `montecarlo-ros2/launch/monte_carlo_publisher-result.launch.py`: 両方のノードを起動するためのROS 2 Launchファイルです。
+- `montecarlo-ros2/launch/monte_carlo_publisher-result.launch.py`: 両方のノードを起動するためのROS2,Launchファイルです。
 
 ## 動作の仕組み
 
