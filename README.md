@@ -1,5 +1,5 @@
 # montecarlo-ros2
-ロボットシステム学の課題２用のROS2パッケージを保存するリポジトリです。
+ロボットシステム学の`課題２`用のROS2パッケージを保存するリポジトリです。
 ***
 
 ## パッケージの概要
@@ -74,8 +74,9 @@ ros2 launch mypkg monte_carlo_pi.launch.py
 ```
 ***
 ## テスト環境
-- ROS 2 Jazzy（Ubuntu 24.04 LTS）
-- ROS 2 Humble（Ubuntu 22.04 LTS）
+- OS: Ubuntu 20.04 LTS
+- ROS 2 バージョン: Foxy Fitzroy
+- Python バージョン: Python 3.8
 
 # ライセンス
 - このパッケージのtest.ymlにて, [こちらのコンテナ](https://hub.docker.com/r/ryuichiueda/ubuntu22.04-ros2/tags)（by Ryuichi Ueda）が使用されています.
