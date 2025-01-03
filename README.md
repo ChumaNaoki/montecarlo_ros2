@@ -76,7 +76,7 @@ ros2 launch mypkg monte_carlo_pi.launch.py
 ## テスト環境
 - OS: Ubuntu 20.04 LTS
 - ROS 2 バージョン: Foxy Fitzroy
-- Python バージョン: Python 3.8
+- Python バージョン: Python 3.8.10
 
 # ライセンス
 - このパッケージのtest.ymlにて, [こちらのコンテナ](https://hub.docker.com/r/ryuichiueda/ubuntu22.04-ros2/tags)（by Ryuichi Ueda）が使用されています.
