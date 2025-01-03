@@ -26,7 +26,7 @@
 ***
 ## ファイル構成
 
-- `mypkg/monte_carlo_publisher.py`: モンテカルロ法を使用して円周率を近似し、結果を`random_pi_estimator`トピックにパブリッシュします。
+- `mypkg/monte_carlo_publisher.py`: `0.3秒`ごとにモンテカルロ法を使用して円周率（π）を近似し、結果を`random_pi_estimator`トピックにパブリッシュします。
 - `mypkg/result.py`: `random_pi_estimator`トピックを購読し、円周率の近似値と試行回数を表示します。
 - `launch/monte_carlo_publisher-result.launch.py`: 両方のノードを起動するためのROS 2 Launchファイルです。
 
@@ -90,7 +90,7 @@ ros2 launch mypkg monte_carlo_publisher-result.launch.py
 
 ***
 # 注意事項
-- このパッケージにおけるノード`monte_carlo_publisher.py`のテストでは、結果がランダムで出力されるため出力結果のテストが行われていません。launchファイルを使用し実行した結果エラーが出力されないことまでしか確認出来ていませんがご了承ください。(手持ちの環境では正しく動作しました。)
+- このパッケージにおけるノード`monte_carlo_publisher.py`のテストでは、結果がランダムで出力されるため再現性のあるテストが行われていません。Githubのテストではlaunchファイルを使用し実行した結果エラーが出力されないことまでしか確認出来ていませんがご了承ください。(手持ちの環境では正しく動作しました。)
 - このパッケージにおけるノード`monte_carlo_publisher.py`はあくまで、モンテカルロ法を使用して円周率(π)を計算し、その結果をトピック`random_pi_estimator`に渡しているだけです。launchファイルを使用し実行した結果の`試行回数:16 円周率: 3.5`における試行回数の数値は、ノード`result.py`にて計算している為、ノードを個別に実行した場合は試行回数の数値が`result.py`が起動された回数になります。
 
 ***
