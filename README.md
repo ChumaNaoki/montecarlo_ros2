@@ -45,34 +45,10 @@
 - 試行回数と近似した円周率をログに記録する。
 
 ***
-## 使い方
 
-### 前提条件
+## 実行時の前提条件
 - ROS2がインストールされていること。
 - ROS 2のワークスペースが適切にセットアップされていること。
-
-### ビルドと実行
-
-1.リポジトリをクローン:
-```
-git clone https://github.com/ChumaNaoki/montecarlo-ros2.git
-```
-
-2.ワークスペースをビルド：
-```
-colcon build
-```
-
-3.ワークスペースをソース：
-```
-source ~/ros2_ws/install/setup.bash
-source ~/ros2_ws/install/local_setup.bash
-```
-
-4.以下のコマンドでローンチファイルを使用して両方のノードを実行：
-```
-ros2 launch mypkg monte_carlo_publisher-result.launch.py
-```
 
 ## 実行結果
 以下のように、試行回数が増えるにつれて円周率の近似値が収束していきます。
