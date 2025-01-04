@@ -31,14 +31,14 @@
 
 # ノード詳細
 
-### monte_carlo_publisher
+## monte_carlo_publisher
 - **概要**: モンテカルロ法でランダムな点を生成し、単位円内に含まれる割合を基に円周率（π）を近似計算するノード。
 - **トピック**:
   - **パブリッシュ**: `random_pi_estimator` (型: `std_msgs/msg/Float32`)
 - **動作**:
   - 0.3秒ごとに円周率（π）の近似値を計算し、上記のトピックに送信します。
 
-### result
+## result
 - **概要**: 円周率の近似値を受け取り、ログ出力するサブスクライバーノード。
 - **トピック**:
   - **サブスクライブ**: `random_pi_estimator` (型: `std_msgs/msg/Float32`)
