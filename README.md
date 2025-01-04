@@ -112,8 +112,14 @@ mypkg/
 
 ***
 ## テスト環境
-- OS: Ubuntu 20.04 LTS
-- ROS 2 バージョン: Foxy Fitzroy
+- **ROS 2 Foxy**  
+  - **OS**: Ubuntu 20.04 LTS  
+  - **環境**: 自身のノートPCで動作確認とテストを実施  
+
+- **ROS 2 Humble**  
+  - **OS**: Ubuntu 22.04 LTS  
+  - **環境**: GitHub ActionsのCI環境で自動テストを実施 
+
 - Python バージョン: Python 3.8.10
 
 # ライセンス
