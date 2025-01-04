@@ -1,4 +1,4 @@
-# montecarlo-ros2
+# mypkg
 ロボットシステム学の`課題2`用のROS2パッケージを保存するリポジトリです。
 ***
 
@@ -13,24 +13,72 @@
 
 ***
 
-## ノードについて
+# ノードとトピックの一覧
 このリポジトリには、モンテカルロ法を用いて円周率（π）を近似するための2つのROS 2ノードが含まれています。
 
-### 構成
+## ノード一覧
+| ノード名               | 概要                                   | パブリッシュ         | サブスクライブ     |
+|------------------------|----------------------------------------|---------------------|--------------------|
+| monte_carlo_publisher | モンテカルロ法で円周率（π）を近似計算するノード  | `random_pi_estimator` | なし               |
+| result                | 円周率（π）の近似値をログ出力するノード       | なし                | `random_pi_estimator` |
 
-1.`monte_carlo_publisher.py`:
-- `0.3秒`ごとに、1回ずつランダムな点を生成し、モンテカルロ法を使用して円周率(π)を計算してその結果をトピック`random_pi_estimator`に`渡すパブリッシャーノードです。
+## トピック詳細
+| トピック名            | データ型             | 説明                                   |
+|-----------------------|---------------------|---------------------------------------|
+| random_pi_estimator   | std_msgs/msg/Float32 | 円周率（π）の近似値をパブリッシュします。    |
 
-2.`result.py`:
-- トピック`random_pi_estimator`を購読し、試行回数と近似したπの値をログ出力する。
-- パブリッシャーノード`monte_carlo_publisher.py`の起動確認・テスト用の簡易的なサブスクライバーノードです。
+
+
+# ノード詳細
+
+### monte_carlo_publisher
+- **概要**: モンテカルロ法でランダムな点を生成し、単位円内に含まれる割合を基に円周率（π）を近似計算するノード。
+- **トピック**:
+  - **パブリッシュ**: `random_pi_estimator` (型: `std_msgs/msg/Float32`)
+- **動作**:
+  - 0.3秒ごとに円周率（π）の近似値を計算し、上記のトピックに送信します。
+
+### result
+- **概要**: 円周率の近似値を受け取り、ログ出力するサブスクライバーノード。
+- **トピック**:
+  - **サブスクライブ**: `random_pi_estimator` (型: `std_msgs/msg/Float32`)
+- **動作**:
+  - トピック`random_pi_estimator`からデータを受け取り、試行回数と近似した円周率（π）の値をログに出力します。
+  - パブリッシャーノード`monte_carlo_publisher.py`の起動確認・テスト用の簡易的なサブスクライバーノードです。
 
 ***
 ## ファイル構成
 
-- `montecarlo-ros2/mypkg/monte_carlo_publisher.py`: `0.3秒`ごとにモンテカルロ法を使用して円周率（π）を近似し、結果を`random_pi_estimator`トピックにパブリッシュします。
-- `montecarlo-ros2/mypkg/result.py`: `random_pi_estimator`トピックを購読し、円周率の近似値と試行回数を表示します。
-- `montecarlo-ros2/launch/monte_carlo_publisher-result.launch.py`: 両方のノードを起動するためのROS2,Launchファイルです。
+```
+mypkg/
+├── .github
+│   └── workflows
+│       └── test.yml
+├── LICENCE
+├── README.md
+├── launch
+│   └── monte_carlo_publisher-result.launch.py
+├── mypkg
+│   ├── __init__.py
+│   ├── monte_carlo_publisher.py
+│   └── result.py
+├── package.xml
+├── resource
+│   └── mypkg
+├── setup.cfg
+├── setup.py
+└── test
+    ├── test.bash
+    ├── test_copyright.py
+    ├── test_flake8.py
+    └── test_pep257.py
+```
+- `mypkg/monte_carlo_publisher.py`: `0.3秒`ごとにモンテカルロ法を使用して円周率（π）を近似し、結果を`random_pi_estimator`トピックにパブリッシュします。
+- `mypkg/result.py`: `random_pi_estimator`トピックを購読し、円周率の近似値と試行回数をログに出力します。
+- `launch/monte_carlo_publisher-result.launch.py`: 両方のノードを起動するためのROS2,Launchファイルです。
+- `.github/workflows/test.yml`: GitHub Actionsを使用してCI/CDを実行するための設定ファイルです。
+- `test/test_flake8.py`: Flake8によるコードスタイルチェックを行います。
+- `test/test_pep257.py`: PEP257準拠のドキュメンテーションチェックを行います。
 
 ## 動作の仕組み
 
@@ -70,6 +118,10 @@
 [result-2] [INFO] [1735913811.145346799] [result]: 試行回数:15 円周率: 2.933333396911621
 [result-2] [INFO] [1735913811.445169080] [result]: 試行回数:16 円周率: 3.0
 [result-2] [INFO] [1735913811.745816775] [result]: 試行回数:17 円周率: 3.058823585510254
+
+---
+
+[result-2] [INFO] [1735913815.745816775] [result]: 試行回数:1000 円周率: 3.1410372257232666
 ```
 
 ***
@@ -79,9 +131,13 @@
 
 ***
 ## テスト環境
-- OS: Ubuntu 20.04 LTS
-- ROS 2 バージョン: Foxy Fitzroy
-- Python バージョン: Python 3.8.10
+- **ROS 2 Foxy**  
+  - **OS**: Ubuntu 20.04 LTS  
+  - **環境**: 自身のノートPCで動作確認とテストを実施  
+
+- **ROS 2 Humble**  
+  - **OS**: Ubuntu 22.04 LTS  
+  - **環境**: GitHub ActionsのCI環境で自動テストを実施 
 
 # ライセンス
 - このソフトウェアパッケージは３条BSDライセンスの下、再頒布および使用が許可されます。
