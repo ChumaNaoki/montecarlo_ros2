@@ -51,15 +51,27 @@
 
 ```
 mypkg/
+├── .github
+│   └── workflows
+│       └── test.yml
+├── LICENCE
+├── README.md
+├── launch
+│   └── monte_carlo_publisher-result.launch.py
+├── mypkg
+│   ├── __init__.py
+│   ├── monte_carlo_publisher.py
+│   └── result.py
 ├── package.xml
+├── resource
+│   └── mypkg
+├── setup.cfg
 ├── setup.py
-├── launch/
-│   └── monte_carlo_publisher-result.launch.py
-├── mypkg/
-│   ├── __init__.py
-│   ├── monte_carlo_publisher.py
-│   └── result.py
-└── test.yml
+└── test
+    ├── test.bash
+    ├── test_copyright.py
+    ├── test_flake8.py
+    └── test_pep257.py
 ```
 - `mypkg/monte_carlo_publisher.py`: `0.3秒`ごとにモンテカルロ法を使用して円周率（π）を近似し、結果を`random_pi_estimator`トピックにパブリッシュします。
 - `mypkg/result.py`: `random_pi_estimator`トピックを購読し、円周率の近似値と試行回数をログに出力します。
