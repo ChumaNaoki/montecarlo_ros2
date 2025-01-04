@@ -47,35 +47,6 @@
   - パブリッシャーノード`monte_carlo_publisher.py`の起動確認・テスト用の簡易的なサブスクライバーノードです。
 
 ***
-## ファイル構成
-
-```
-montecarlo_ros2/
-├── .github
-│   └── workflows
-│       └── test.yml
-├── LICENCE
-├── README.md
-├── launch
-│   └── monte_carlo_publisher-result.launch.py
-├── montecarlo_ros2
-│   ├── __init__.py
-│   ├── monte_carlo_publisher.py
-│   └── result.py
-├── package.xml
-├── resource
-│   └── montecarlo_ros2
-├── setup.cfg
-├── setup.py
-└── test
-    ├── test.bash
-    ├── test_copyright.py
-    ├── test_flake8.py
-    └── test_pep257.py
-```
-- `montecarlo_ros2/monte_carlo_publisher.py`: `0.3秒`ごとにモンテカルロ法を使用して円周率（π）を近似し、結果を`random_pi_estimator`トピックにパブリッシュします。
-- `montecarlo_ros2/result.py`: `random_pi_estimator`トピックを購読し、円周率の近似値と試行回数をログに出力します。
-- `launch/monte_carlo_publisher-result.launch.py`: `monte_carlo_publisher.py`と`result.py`を同時に起動するROS2のLaunchファイルです。
 
 ## 動作の仕組み
 
