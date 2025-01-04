@@ -120,8 +120,6 @@ mypkg/
   - **OS**: Ubuntu 22.04 LTS  
   - **環境**: GitHub ActionsのCI環境で自動テストを実施 
 
-- Python バージョン: Python 3.8.10
-
 # ライセンス
 - このソフトウェアパッケージは３条BSDライセンスの下、再頒布および使用が許可されます。
 - このパッケージのtest.ymlにて, [こちらのコンテナ](https://hub.docker.com/r/ryuichiueda/ubuntu22.04-ros2/tags)（by Ryuichi Ueda）が使用されています.
