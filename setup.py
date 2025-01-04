@@ -2,7 +2,7 @@ from setuptools import setup
 import os
 from glob import glob
 
-package_name = 'mypkg'
+package_name = 'montecarlo_ros2'
 
 setup(
     name=package_name,
@@ -23,8 +23,8 @@ setup(
     tests_require=['pytest'],
     entry_points={
     'console_scripts': [
-        'monte_carlo_publisher = mypkg.monte_carlo_publisher:main',
-        'result= mypkg.result:main',
+        'monte_carlo_publisher = montecarlo_ros2.monte_carlo_publisher:main',
+        'result= montecarlo_ros2.result:main',
         ],
     },
 )
