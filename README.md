@@ -137,7 +137,7 @@ montecarlo_ros2/
 
 - **ROS 2 Humble**  
   - **OS**: Ubuntu 22.04 LTS  
-  - **環境**: GitHub ActionsのCI環境で自動テストを実施 
+  - **環境**: GitHub Actionsで自動テストを実施 
 
 # ライセンス
 - このソフトウェアパッケージは３条BSDライセンスの下、再頒布および使用が許可されます。
