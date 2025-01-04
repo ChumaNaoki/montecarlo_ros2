@@ -130,7 +130,7 @@ montecarlo_ros2/
 - launchファイルを使用し実行した結果出力される試行回数は、`result.py`ノードが起動された回数に依存します。`monte_carlo_publisher.py`が発行する円周率の近似値とは独立して動作します。
 
 ***
-## テスト環境
+## ROSのバージョンについて
 - **ROS 2 Foxy**  
   - **OS**: Ubuntu 20.04 LTS  
   - **環境**: 自身のノートPCで動作確認とテストを実施  
