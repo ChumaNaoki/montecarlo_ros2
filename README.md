@@ -13,10 +13,19 @@
 
 ***
 
-## ノードについて
+# ノードとトピックの一覧
 このリポジトリには、モンテカルロ法を用いて円周率（π）を近似するための2つのROS 2ノードが含まれています。
 
-### 構成
+### ノード一覧
+| ノード名               | 概要                                   | パブリッシュ         | サブスクライブ     |
+|------------------------|----------------------------------------|---------------------|--------------------|
+| monte_carlo_publisher | モンテカルロ法で円周率を近似するノード  | `random_pi_estimator` | なし               |
+| result                | 円周率の近似値をログ出力するノード       | なし                | `random_pi_estimator` |
+
+### トピック詳細
+| トピック名            | データ型             | 説明                                   |
+|-----------------------|---------------------|---------------------------------------|
+| random_pi_estimator   | std_msgs/msg/Float32 | 円周率の近似値をパブリッシュします。    |
 
 1.`monte_carlo_publisher.py`:
 - `0.3秒`ごとに、1回ずつランダムな点を生成し、モンテカルロ法を使用して円周率(π)を計算してその結果をトピック`random_pi_estimator`に`渡すパブリッシャーノードです。
@@ -28,6 +37,18 @@
 ***
 ## ファイル構成
 
+```
+mypkg/
+├── package.xml
+├── setup.py
+├── launch/
+│   └── monte_carlo_publisher-result.launch.py
+├── mypkg/
+│   ├── __init__.py
+│   ├── monte_carlo_publisher.py
+│   └── result.py
+└── test.yml
+```
 - `mypkg/monte_carlo_publisher.py`: `0.3秒`ごとにモンテカルロ法を使用して円周率（π）を近似し、結果を`random_pi_estimator`トピックにパブリッシュします。
 - `mypkg/result.py`: `random_pi_estimator`トピックを購読し、円周率の近似値と試行回数を表示します。
 - `launch/monte_carlo_publisher-result.launch.py`: 両方のノードを起動するためのROS2,Launchファイルです。
