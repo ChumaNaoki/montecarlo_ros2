@@ -1,4 +1,4 @@
-# mypkg
+# montecarlo_ros2
 ロボットシステム学の`課題2`用のROS2パッケージを保存するリポジトリです。
 ***
 
@@ -50,7 +50,7 @@
 ## ファイル構成
 
 ```
-mypkg/
+montecarlo_ros2/
 ├── .github
 │   └── workflows
 │       └── test.yml
@@ -58,13 +58,13 @@ mypkg/
 ├── README.md
 ├── launch
 │   └── monte_carlo_publisher-result.launch.py
-├── mypkg
+├── montecarlo_ros2
 │   ├── __init__.py
 │   ├── monte_carlo_publisher.py
 │   └── result.py
 ├── package.xml
 ├── resource
-│   └── mypkg
+│   └── montecarlo_ros2
 ├── setup.cfg
 ├── setup.py
 └── test
@@ -73,8 +73,8 @@ mypkg/
     ├── test_flake8.py
     └── test_pep257.py
 ```
-- `mypkg/monte_carlo_publisher.py`: `0.3秒`ごとにモンテカルロ法を使用して円周率（π）を近似し、結果を`random_pi_estimator`トピックにパブリッシュします。
-- `mypkg/result.py`: `random_pi_estimator`トピックを購読し、円周率の近似値と試行回数をログに出力します。
+- `montecarlo_ros2/monte_carlo_publisher.py`: `0.3秒`ごとにモンテカルロ法を使用して円周率（π）を近似し、結果を`random_pi_estimator`トピックにパブリッシュします。
+- `montecarlo_ros2/result.py`: `random_pi_estimator`トピックを購読し、円周率の近似値と試行回数をログに出力します。
 - `launch/monte_carlo_publisher-result.launch.py`: 両方のノードを起動するためのROS2,Launchファイルです。
 - `.github/workflows/test.yml`: GitHub Actionsを使用してCI/CDを実行するための設定ファイルです。
 - `test/test_flake8.py`: Flake8によるコードスタイルチェックを行います。
