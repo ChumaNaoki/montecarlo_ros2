@@ -76,6 +76,9 @@ mypkg/
 - `mypkg/monte_carlo_publisher.py`: `0.3秒`ごとにモンテカルロ法を使用して円周率（π）を近似し、結果を`random_pi_estimator`トピックにパブリッシュします。
 - `mypkg/result.py`: `random_pi_estimator`トピックを購読し、円周率の近似値と試行回数をログに出力します。
 - `launch/monte_carlo_publisher-result.launch.py`: 両方のノードを起動するためのROS2,Launchファイルです。
+- `.github/workflows/test.yml`: GitHub Actionsを使用してCI/CDを実行するための設定ファイルです。
+- `test/test_flake8.py`: Flake8によるコードスタイルチェックを行います。
+- `test/test_pep257.py`: PEP257準拠のドキュメンテーションチェックを行います。
 
 ## 動作の仕組み
 
