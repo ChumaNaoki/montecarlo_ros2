@@ -50,8 +50,8 @@
 
 ## ファイル構成
 
-- mypkg/monte_carlo_publisher.py: 0.3秒ごとにモンテカルロ法を使用して円周率（π）を近似し、結果をrandom_pi_estimatorトピックにパブリッシュします。
-- mypkg/result.py: random_pi_estimatorトピックを購読し、円周率の近似値と試行回数を表示します。
+- montecarlo_ros2/monte_carlo_publisher.py: 0.3秒ごとにモンテカルロ法を使用して円周率（π）を近似し、結果をrandom_pi_estimatorトピックにパブリッシュします。
+- montecarlo_ros2/result.py: random_pi_estimatorトピックを購読し、円周率の近似値と試行回数を表示します。
 - launch/monte_carlo_publisher-result.launch.py: 両方のノードを起動するためのROS 2 Launchファイルです。
 
 ***
