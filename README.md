@@ -88,7 +88,7 @@ ros2 launch montecarlo_ros2 monte_carlo_publisher-result.launch.py
 
 ***
 # 注意事項
-- ノード`monte_carlo_publisher.py`の結果はランダムに生成されるため、出力結果が2パターンしかない1回目しかgithubにおけるテストを行っていません。(自身のノートPCではで1000回まで動作を確認しています。)
+- ノード`monte_carlo_publisher.py`の結果はランダムに生成されるため、出力結果が2パターンしかない1回目しかgithubにおけるテストを行っていません。(自身のノートPCでは1000回までの動作を確認しています。)
 - ノード`monte_carlo_publisher.py`にて生成される近似値は徐々に精度が向上します。初期の段階では正確ではない場合があることを理解したうえで使用してください。
 - launchファイルを使用し実行した結果出力される試行回数は、`result.py`ノードが起動された回数に依存します。`monte_carlo_publisher.py`が発行する円周率の近似値とは独立して動作します。
 
